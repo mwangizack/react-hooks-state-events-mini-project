@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Task from './Task'
 
-function TaskList({initialTasks}) {
-  const [tasks, setTasks] = useState(initialTasks)
-
+function TaskList({tasks, setTasks}) {
   function handleDeleteTask(e){
     const newTasks = tasks.filter(task => task.text !== e.target.parentElement.querySelector('.text').textContent)
     setTasks(newTasks)
